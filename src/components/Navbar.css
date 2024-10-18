@@ -1,0 +1,79 @@
+/* Navbar.css */
+body {
+    margin: 0;
+    
+  }
+  
+  .navbar {
+    width: 100vw; /* Ensures the navbar spans the full viewport width */
+    background-color: #6C8EAD;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps the navbar above other content */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0rem 1.5rem 0rem 1.5rem; /* Adds internal padding to the container */
+    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 500;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .navbar-item a {
+    color: white;
+    filter: brightness(85%);
+    text-decoration: none;
+    transition: 0.6s ease;
+    font-family: 'Poppins';
+  }
+  
+  .navbar-item a:hover {
+    filter: brightness(100%);
+  }
+  
+  /* Mobile styling */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .navbar-menu.open {
+      display: flex;
+    }
+  
+    .navbar-item {
+      text-align: center;
+    }
+  }
+  
