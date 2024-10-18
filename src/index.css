@@ -18,3 +18,7 @@
   font-weight: 600;
   src: local('Poppins'), url(./fonts/Poppins-Bold.ttf) format('truetype');
 }
+
+body {
+  color: #343a40
+}

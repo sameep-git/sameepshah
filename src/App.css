@@ -25,14 +25,42 @@
 
 .profile {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 1rem;
 }
 
 .aboutme {
-  background-color: #3E92CC;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutbox {
+  background-color: #e7ecef;
   display: flex;
   flex-direction: row;
   border-radius: 5px;
   padding: 1rem;
+  font-size: 20px;
+}
+
+.profilephoto {
+  margin: 0, auto;
+  pointer-events: none;
+  width: 50%;
+}
+
+.contactme {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  padding-left: 0.25rem;
+  color: #3E92CC;
+  text-decoration: underline;
+}
+
+.contactlist {
+  display: flex;
+  flex-direction: column;
 }

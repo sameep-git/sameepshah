@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0rem 1.5rem 0rem 1.5rem; /* Adds internal padding to the container */
+    padding: 0.25rem 1.5rem 0.25rem 1.5rem; /* Adds internal padding to the container */
     box-sizing: border-box; /* Ensures padding doesn't affect overall width */
   }
   
