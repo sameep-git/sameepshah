@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
+      <div className="navbar-container flex">
         <a href="/" className="navbar-logo">Sameep Shah</a>
         <button className="menu-toggle" onClick={toggleMenu}>
           <span className="menu-icon">{isOpen ? '✕' : '☰'}</span>
@@ -22,6 +22,7 @@ const Navbar = () => {
           <li className="navbar-item"><a href="#work">Work</a></li>
           <li className="navbar-item"><a href="#extracurriculars">Extracurrculars</a></li>
           <li className="navbar-item"><a href="#interests">Interests</a></li>
+          <li className='navbar-item'><a href='#contactme'>Contact Me</a></li>
         </ul>
       </div>
     </nav>

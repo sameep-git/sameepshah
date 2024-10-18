@@ -36,7 +36,7 @@ const App = () => {
                 </svg>
               </span>
             <p> I am a double major Computer Science and Economics student at TCU. 
-              I love building tools to optimize operations and solve a critical problem. 
+              I love building tools to optimize operations and solve critical problems. 
               My technical interests range from <strong>aritificial intelligence</strong> to <strong>systems programming</strong> to <strong> data analysis</strong>. 
               My non-technical interests include watching hockey, listening to rock music, researching the economy and following esports.</p><br></br>
             </div>
@@ -51,7 +51,7 @@ const App = () => {
                 </div>
             </div>
           </div>
-          <div class="profilephoto basis-1/4 md:ml-3 md:-mt-2">
+          <div class="profilephoto basis-1/4 md:ml-3 lg:-mt-2">
             <img src={profilephoto} class="md:max-w-[175px]"></img>
           </div>
         </div>

@@ -22,3 +22,11 @@
 body {
   color: #343a40
 }
+
+::-moz-selection { /* Code for Firefox */
+  background: #e5d2f6;
+}
+
+::selection {
+  background: #e5d2f6;
+}
