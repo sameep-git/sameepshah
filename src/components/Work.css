@@ -1,0 +1,75 @@
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px; /* Space between cards */
+    padding: 20px;
+  }
+
+.card {
+    flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    margin-bottom: -1rem;
+    cursor: pointer;
+  }
+
+.card:hover {
+    filter: brightness(97%);
+    transition: 0.2s ease;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+  }
+  
+.card p {
+    margin: 0;
+  }
+
+.workhist-text {
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+.company-name {
+  padding: 0 6px;
+  border-radius: 3px;
+  font-size: .875rem;
+  line-height: 1.125rem;
+  white-space: nowrap;
+  display: inline-block;
+  margin: 3px 0;
+  -webkit-margin-end: 6px;
+  margin-inline-end: 6px;
+}
+
+.pos-title {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.pos-content {
+  padding-top: 0.25rem;
+}
+
+.pos-skills{
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 12px;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.pos-skill {
+  margin-right: 0.25rem;
+  padding: 0.125rem;
+  border-radius: 3px;
+}

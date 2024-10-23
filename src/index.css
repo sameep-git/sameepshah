@@ -30,3 +30,34 @@ body {
 ::selection {
   background: #e5d2f6;
 }
+
+/* FIREFOX */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #e7ecef white;
+}
+
+/* CHROME */
+
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 34px;
+}
+
+::-webkit-scrollbar-track {
+  background: #262338;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6E7191;
+  border-radius: 8px;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7E81A1;
+}

@@ -3,6 +3,7 @@ import React from 'react'
 import './App.css'
 import './index.css'
 import Navbar from './components/Navbar'
+import Work from './components/Work'
 import TextTransition, { presets } from 'react-text-transition';
 import profilephoto from './assets/profilephoto.jpg';
 
@@ -13,7 +14,7 @@ const App = () => {
   React.useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => index + 1),
-      2000, // every 3 seconds
+      2000, // every 2 seconds
     );
     return () => clearTimeout(intervalId);
   }, []);
@@ -21,7 +22,7 @@ const App = () => {
   return (
     <div>
       <Navbar/>
-      <div class="intro">
+      <div class="intro md:px-20 md:pt-20 md:pb-4">
         <h1 class="name">Sameep Shah</h1>
         <h3 class="name-desc md:flex-row">
           <span>Hi there, I am Sameep. I am a</span>
@@ -55,6 +56,9 @@ const App = () => {
             <img src={profilephoto} class="md:max-w-[175px]"></img>
           </div>
         </div>
+      </div>
+      <div class='workexp md:ml-16 md:mr-32'>
+          <Work/>
       </div>
     </div>
   )
