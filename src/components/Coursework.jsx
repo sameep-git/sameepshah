@@ -1,6 +1,5 @@
 import React from "react";
 import './Coursework.css'
-import { render } from "solid-js/web";
 
 const Coursework = () => { 
   const data = {
