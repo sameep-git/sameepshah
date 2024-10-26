@@ -4,13 +4,30 @@ import './App.css'
 import './index.css'
 import Navbar from './components/Navbar'
 import Work from './components/Work'
+import Extracurriculars from './components/Extracurriculars'
 import TextTransition, { presets } from 'react-text-transition';
 import profilephoto from './assets/profilephoto.jpg';
+import Coursework from './components/Coursework'
 
 const TEXTS = ['TCU Student', 'Software Developer', 'Research Assistant', 'Leader'];
+const headers = ["Name", "Age", "City"];
+const data = [
+  { name: "Bob", age: 30, city: "San Francisco" },
+  { name: "Alice", age: 25, city: "New York" },
+  { name: "Charlie", age: 35, city: "Chicago" },
+];
 
 const App = () => {
   const [index, setIndex] = React.useState(0);
+  const [coursework, setCoursework] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/coursework.json')
+      .then(response => response.json())
+      .then(coursework => setCoursework(coursework))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   React.useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => index + 1),
@@ -59,6 +76,9 @@ const App = () => {
       </div>
       <div class='workexp md:ml-16 md:mr-32'>
           <Work/>
+      </div>
+      <div class='courses'>
+          <Coursework /> 
       </div>
     </div>
   )

@@ -1,0 +1,41 @@
+.coursework-text {
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+.coursework {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.semesters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: space-between;
+    justify-content:flex-start;
+}
+
+.semester {
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-right: 2rem;
+}
+
+.desc-row {
+    width: 300px;
+}
+
+.table {
+    margin-top: 1rem;
+}
+
+.sem-text {
+    font-weight: 600;
+}

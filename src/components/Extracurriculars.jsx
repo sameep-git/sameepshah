@@ -1,9 +1,7 @@
 import React from 'react';
-import './Work.css'
-import Position from './Position';
-import {BrowserRouter, Link, Route, Routes, useParams} from 'react-router-dom'
+import './Extracurriculars.css'
 
-const Work = () => {
+const Extracurriculars = () => {
     const cards = [
         [{ id: 1, company:"Children's Health", companyColor: "#f9c6c9", title: "AI Researcher", time:"May 2024 - Present" ,content: "Develop and deploy an AI tool...", skills:[["Python", "#c6def1"],["LangChain", "#e2cfc4"], ["PyTorch","#e2cfc4"], ["React", "#e2cfc4"], ["ChromaDB", "#e2cfc4"], ["Linux", "#f9c6c9"]] }],
         [{ id: 5, company:"TCU Burnett School of Medicine", companyColor:"#c9e4de", title: "Data Analytics Research Assistant", time:"Oct 2023 - March 2024", content: "Visualized data collected for over 150 survey...", skills:[["Python", "#c6def1"], ["IBM SPSS", "#faedcb"], ["Tableau", "#faedcb"], ["Matplotlib", "#e2cfc4"], ["Linux", "#f9c6c9"]] }],
@@ -11,9 +9,9 @@ const Work = () => {
         [{ id: 3, company:"Texas Christian University", companyColor: "#dbcdf0", title: "Teaching Assistant", additionalCtx: "COSC 10403: Introduction to Programming",content: "Tutor students in Applied Calc...", skills:[["Java", "#c6def1"]]}],
         [{ id: 4, company:"Texas Christian University", companyColor: "#dbcdf0", title: "IT Support Specialist", time:"Oct 2022 - Aug 2023",content: "Diagnosed and resolved over 300 requests...", skills:[]}],
       ];
-
-      const handleCardClick = (view) => {
-        <Route path="/work/:id" element={<Position view = {view}/>}/>
+    
+      const handleCardClick = (id) => {
+        alert(`Card ${id} clicked!`);
       };
     return (
         <div>
@@ -26,8 +24,7 @@ const Work = () => {
                             <span class="company-name" style={{backgroundColor:view.companyColor}}>
                             {view.company}
                             </span>
-                        {/* <Link to={'/work/:id'} element={<Position view={view}/>}> */}
-                        <div key={view.id} class="card">
+                        <div key={view.id} className="card" onClick={() => handleCardClick(view.id)}>
                             <div class="inline-flex">
                                 <svg class="h-5 w-5 text-blue-600 pt-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="4" /></svg>                                
                                 <p class="pos-title">{view.title}</p>
@@ -45,7 +42,6 @@ const Work = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* </Link> */}
                         </div>
                     ))}
                 </div>
@@ -55,4 +51,4 @@ const Work = () => {
     );
 };
 
-export default Work;
+export default Extracurriculars;
