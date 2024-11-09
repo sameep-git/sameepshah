@@ -17,7 +17,6 @@ const Extracurriculars = () => {
       ];
     
       const handleCardClick = (id) => {
-        alert(`Card ${id} clicked!`);
       };
     return (
         <div>
