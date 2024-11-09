@@ -65,7 +65,7 @@ const App = () => {
                   <a href='mailto:sameepshah384@gmail.com' class="contact">sameepshah384@gmail.com,</a>
                   <a href='https://www.linkedin.com/in/sameepshah-/' target='_blank' class="contact">LinkedIn,</a>
                   <a href='https://github.com/sameep-git' target='_blank' class="contact">GitHub,</a>
-                  <a href='https://tcu.box.com/s/ihrzhiikpxrv79oc7oyotka6n3s0ez5g' target='_blank' class='contact'>Resumé</a>
+                  <a href='https://tcu.box.com/s/3pnbjl93xupe2kv7tojrqhvvirmo6g80' target='_blank' class='contact'>Resumé</a>
                 </div>
             </div>
           </div>
@@ -76,6 +76,11 @@ const App = () => {
       </div>
       <div class='workexp md:ml-16 md:mr-32'>
           <Work/>
+          <hr></hr>
+      </div>
+      <div class='extracurr md:ml-16 md:mr-32'>
+          <Extracurriculars/>
+          <hr></hr>
       </div>
       <div class='courses'>
           <Coursework /> 

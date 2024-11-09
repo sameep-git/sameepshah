@@ -4,16 +4,6 @@ import './Coursework.css'
 const Coursework = () => { 
   const data = {
     "semesters": {
-        "Fall 2022" : {
-        "classes" : [
-            {"class": "COSC 10403", "desc":"Introduction to Programming", "grade": "A"},
-            {"class": "MATH 10524", "desc":"Calculus I", "grade": "A"},
-            {"class": "ECON 10223", "desc":"Intro to Microeconomics", "grade": "A"},
-            {"class": "PHYS 10273", "desc":"Intro to Astronomy", "grade": "A"},
-            {"class": "PSYC 10213", "desc":"Intro to Psychology", "grade": "A"},
-            {"class": "UNLF 10211", "desc":"Intro to University Life", "grade": "A"}
-        ]
-        },
         "Spring 2023" : {
             "classes" : [
             {"class": "COSC 20203", "desc":"Techniques in Programming", "grade": "A"},
@@ -22,6 +12,16 @@ const Coursework = () => {
             {"class": "ECON 10233", "desc":"Intro to Macroeconomics", "grade": "B"},
             {"class": "PHYS 10273", "desc":"Archeoastronomy", "grade": "A"},
             {"class": "SOCI 20223", "desc":"Social Problems", "grade": "A"}
+        ]
+        },
+        "Fall 2022" : {
+        "classes" : [
+            {"class": "COSC 10403", "desc":"Introduction to Programming", "grade": "A"},
+            {"class": "MATH 10524", "desc":"Calculus I", "grade": "A"},
+            {"class": "ECON 10223", "desc":"Intro to Microeconomics", "grade": "A"},
+            {"class": "PHYS 10273", "desc":"Intro to Astronomy", "grade": "A"},
+            {"class": "PSYC 10213", "desc":"Intro to Psychology", "grade": "A"},
+            {"class": "UNLF 10211", "desc":"Intro to University Life", "grade": "A"}
         ]
         },
         "Fall 2023" : {
@@ -62,10 +62,10 @@ const Coursework = () => {
         <h1 class="coursework-text md:mx-12">Coursework</h1>
             <div class="semesters">
                     <div class="semester xl:mx-20 md:mx-12">
-                    <h3 class="sem-text">Fall 2023</h3>
+                    <h3 class="sem-text">Spring 2024</h3>
                         <table className="border border-gray-300 table"></table>
                         <tbody>
-                            {data.semesters["Fall 2023"].classes.map( (row, index) => (
+                            {data.semesters["Spring 2024"].classes.map( (row, index) => (
                                 <tr key={index} className="hover:bg-gray-50">
                                     <td className="px-4 py-2 border border-gray-300">{row.class}</td>
                                     <td className="px-4 py-2 border border-gray-300 desc-row">{row.desc}</td>
@@ -75,10 +75,10 @@ const Coursework = () => {
                         </tbody>
                     </div>
                     <div class="semester xl:mx-20 md:mx-12">
-                    <h3 class="sem-text">Spring 2024</h3>
+                    <h3 class="sem-text">Fall 2023</h3>
                         <table className="border border-gray-300 table"></table>
                         <tbody>
-                            {data.semesters["Spring 2024"].classes.map( (row, index) => (
+                            {data.semesters["Fall 2023"].classes.map( (row, index) => (
                                 <tr key={index} className="hover:bg-gray-50">
                                     <td className="px-4 py-2 border border-gray-300">{row.class}</td>
                                     <td className="px-4 py-2 border border-gray-300 desc-row">{row.desc}</td>

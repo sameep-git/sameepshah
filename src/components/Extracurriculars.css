@@ -4,6 +4,7 @@
     overflow-y: hidden;
     gap: 16px; /* Space between cards */
     padding: 20px;
+    margin-bottom: 2rem;
   }
 
 .card {
@@ -39,10 +40,10 @@
     padding-left: 1rem;
 }
 
-.company-name {
+.sem-name {
   padding: 0 6px;
   border-radius: 3px;
-  font-size: .875rem;
+  font-size: 1rem;
   line-height: 1.125rem;
   white-space: nowrap;
   display: inline-block;
