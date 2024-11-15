@@ -55,7 +55,7 @@ const App = () => {
               </span>
             <p> I am a double major Computer Science and Economics student at TCU. 
               I love building tools to optimize operations and solve critical problems. 
-              My technical interests range from <strong>aritificial intelligence</strong> to <strong>systems programming</strong> to <strong> data analysis</strong>. 
+              My technical interests range from <strong>artificial intelligence</strong> to <strong>systems programming</strong> to <strong> data analysis</strong>. 
               My non-technical interests include watching hockey, listening to rock music, researching the economy and following esports.</p><br></br>
             </div>
             <div class="contactme md:flex-row">
