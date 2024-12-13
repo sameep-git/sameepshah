@@ -65,7 +65,7 @@ const App = () => {
                   <a href='mailto:sameepshah384@gmail.com' class="contact">sameepshah384@gmail.com,</a>
                   <a href='https://www.linkedin.com/in/sameepshah-/' target='_blank' class="contact">LinkedIn,</a>
                   <a href='https://github.com/sameep-git' target='_blank' class="contact">GitHub,</a>
-                  <a href='https://tcu.box.com/s/9u1d9ixn78xrpf13qycd3sqkd6n3g8iy' target='_blank' class='contact'>Resumé</a>
+                  <a href='https://tcu.box.com/s/s5u56z3olb4zdropshlehshjnp9jxxsx' target='_blank' class='contact'>Resumé</a>
                 </div>
             </div>
           </div>
