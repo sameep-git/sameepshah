@@ -104,9 +104,12 @@ export default function Home() {
         id="about"
         className="min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-32"
       >
-        <h2 className="text-3xl font-bold mb-4">About Me</h2>
+        <p className="text-text text-lg font-medium font-mono">
+          <span className="text-accent mr-2">{"#1"}.</span>
+          <span>About Me</span>
+        </p>
         <p className="max-w-xl text-gray-700">
-          I&apos;m a developer with interests in web performance, backend systems, and UI/UX.
+          WIP.
         </p>
       </section>
 
@@ -115,9 +118,12 @@ export default function Home() {
         id="experience"
         className="min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-32"
       >
-        <h2 className="text-3xl font-bold mb-4">Experience</h2>
+        <p className="text-text text-lg font-medium font-mono">
+          <span className="text-accent mr-2">{"#2"}.</span>
+          <span>Experience</span>
+        </p>
         <p className="max-w-xl text-gray-700">
-          I&apos;m a developer with interests in web performance, backend systems, and UI/UX.
+          WIP.
         </p>
       </section>
 
@@ -126,8 +132,11 @@ export default function Home() {
         id="projects"
         className="min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-32"
       >
-        <h2 className="text-3xl font-bold mb-4">Projects</h2>
-        <p className="max-w-xl text-gray-700">Here are some of my favorite projects!</p>
+        <p className="text-text text-lg font-medium font-mono">
+          <span className="text-accent mr-2">{"#3"}.</span>
+          <span>Projects</span>
+        </p>
+        <p className="max-w-xl text-gray-700">WIP.</p>
       </section>
 
       {/* Contact Section */}
