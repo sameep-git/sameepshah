@@ -76,7 +76,7 @@ export default function Navbar() {
           ))}
           
           <a 
-            href="https://www.sameepshah.com/Resume.pdf"
+            href="/Sameep%20Shah%20Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 border border-accent text-accent font-mono text-sm hover:bg-accent hover:text-background transition-all"
@@ -138,7 +138,7 @@ export default function Navbar() {
               ))}
               
               <a 
-                href="https://www.sameepshah.com/Resume.pdf"
+                href="/Sameep%20Shah%20Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 px-6 py-3 border border-accent text-accent font-mono text-sm hover:bg-accent hover:text-background transition-all w-full text-center"

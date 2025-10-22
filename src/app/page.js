@@ -87,7 +87,7 @@ export default function Home() {
         </motion.div>
         
         <motion.a
-          href="https://www.sameepshah.com/Resume.pdf"
+          href="/Sameep%20Shah%20Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0 }}
