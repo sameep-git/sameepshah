@@ -4,6 +4,7 @@
   --color-primary: #087e8b;
   --color-secondary: #ff5a5f;
   --color-accent: #c81d25;
+  --color-accent-rgb: 200, 29, 37;
   --color-background: #E8E8E8;
   --color-text: #0b3954;
 
@@ -13,4 +14,9 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(var(--color-accent-rgb), 0.3);
+  color: white;
 }

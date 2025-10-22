@@ -159,7 +159,7 @@ export default function Home() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="my-12 mx-8 px-8 py-4 border-2 border-accent text-accent hover:text-background font-mono hover:bg-accent transition-all"
           >
-            Send an Email
+            Send Email
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/sameepshah-"
