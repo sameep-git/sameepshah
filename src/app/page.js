@@ -20,7 +20,7 @@ export default function Home() {
     }, 3000); // Change every 3 seconds
     
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]); // Fixed: Added roles.length
 
   return (
     <>
@@ -106,7 +106,7 @@ export default function Home() {
       >
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="max-w-xl text-gray-700">
-          I'm a developer with interests in web performance, backend systems, and UI/UX.
+          I&apos;m a developer with interests in web performance, backend systems, and UI/UX.
         </p>
       </section>
 
@@ -117,7 +117,7 @@ export default function Home() {
       >
         <h2 className="text-3xl font-bold mb-4">Experience</h2>
         <p className="max-w-xl text-gray-700">
-          I'm a developer with interests in web performance, backend systems, and UI/UX.
+          I&apos;m a developer with interests in web performance, backend systems, and UI/UX.
         </p>
       </section>
 
