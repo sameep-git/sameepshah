@@ -2,6 +2,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
+import SectionNavigator from "@/components/SectionNavigator";
+import ImageCarousel from "@/components/ImageCarousel";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Home() {
   const roles = [
@@ -11,20 +14,58 @@ export default function Home() {
     "Sports Enthusiast.",
     "Yapper."
   ];
+
+  const aboutBullets = [
+    "Software Engineering Intern at CBRE (Fortune 150 company), developed scalable solutions for an AI team serving 20,000+ monthly users.",
+    "AI/ML Research Assistant, built Agentic + RAG applications and improved report accuracy by 18%.",
+    "Published first author with 4 peer-reviewed papers in healthcare AI and public health, and received a Best Paper Award.",
+    "I am an active leader on campus - Dining Services Chair representing 13,000 students, Resident Assistant serving 290+ students, and CSE Representative in Student Government."
+  ];
+
+  const skills = [
+    "Python",
+    "Golang",
+    "C/C++",
+    "Java",
+    "Rust",
+    "SQL",
+    "JavaScript",
+    "HTML/CSS",
+    "Spring Boot",
+    "LangChain",
+    "ReactJS",
+    "VueJS",
+    "AngularJS",
+    "MySQL",
+    "TailwindCSS",
+    "PyTorch",
+    "NumPy",
+    "MongoDB",
+    "AWS",
+    "Google Cloud",
+    "Git",
+    "Docker",
+    "Jenkins",
+    "Firebase",
+    "Qdrant"
+  ];
   
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
     
     return () => clearInterval(interval);
-  }, [roles.length]); // Fixed: Added roles.length
+  }, [roles.length]);
 
   return (
     <>
       <Navbar />
+      <SectionNavigator />
+      <SocialLinks />
+      
       <main
         id="home"
         className="flex flex-col items-start justify-center h-screen px-8 md:px-16 lg:px-32 max-w-7xl mx-auto pt-20 md:pt-0"
@@ -102,16 +143,48 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-32"
+        className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-32 max-w-7xl mx-auto pt-20"
       >
-        <p className="text-text text-lg font-medium font-mono">
-          <span className="text-accent mr-2">{"#1"}.</span>
-          <span>About Me</span>
-        </p>
-        <p className="max-w-xl text-gray-700">
-          WIP.
-        </p>
-      </section>
+        {/* Header */}
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-text font-mono flex items-center">
+            <span className="text-accent mr-3">#1.</span>
+            <span>About Me</span>
+            <span className="ml-6 h-px bg-accent flex-grow max-w-xs opacity-30"></span>
+          </h2>
+        </div>
+        
+        {/* Content Grid */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Text */}
+          <div className="space-y-4 text-gray-400 text-base md:text-lg">
+            
+            <ul className="space-y-3 list-none">
+              {aboutBullets.map((bullet, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-accent mr-3 mt-1">#</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <p className="pt-4">
+              Here are some of my technical skills:
+            </p>
+            
+            <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm font-mono pt-2">
+              {skills.map((skill, index) => (
+                <div key={index} className="flex items-center">
+                  <span className="text-accent mr-2">#</span>
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <ImageCarousel />
+        </div>
+      </section>  
 
       {/* Experience Section */}
       <section
