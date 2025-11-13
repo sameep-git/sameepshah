@@ -1,5 +1,5 @@
 "use client";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Twitter, X } from "lucide-react";
 
 export default function SocialLinks() {
   return (
@@ -25,6 +25,17 @@ export default function SocialLinks() {
           aria-label="LinkedIn"
         >
           <Linkedin size={24} />
+        </a>
+
+        {/* Twitter/X */}
+        <a
+          href="https://x.com/sameeepshah"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-text hover:text-accent transition-all hover:translate-y-1 duration-300"
+          aria-label="X"
+        >
+          <Twitter size={24} />
         </a>
 
         {/* Vertical line */}
