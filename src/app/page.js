@@ -14,7 +14,7 @@ export default function Home() {
     "Problem Solver.",
     "Leader.",
     "Sports Enthusiast.",
-    "Yapper."
+    "Communicator."
   ];
 
   const aboutBullets = [
@@ -174,7 +174,7 @@ export default function Home() {
     },
     {
       title: "HealthLit",
-      description: "RAG powered app to make clinicians lives easier and improving patient outcomes. Worked in conjunction with HealthLit Research Lab & Children's Health.",
+      description: "RAG powered app to make clinicians' lives easier and improving patient outcomes. Worked in conjunction with HealthLit Research Lab & Children's Health.",
       image: "",
       technologies: ["React", "TailwindCSS", "Firebase", "Qdrant", "LangChain", "Python", "PyTorch"],
       github: "https://github.com/sameep-git/HealthLitPro-RAG",
@@ -183,7 +183,7 @@ export default function Home() {
     },
     {
       title: "ExRx AI",
-      description: "Working with UT Southwestern researchers, developing an AI powered exercise prescription generator for physical therapists to create personalized exercise plans for patients with heart conditions. (Currently in protoype phase)",
+      description: "Working with UT Southwestern researchers, developing an AI powered exercise prescription generator for physical therapists to create personalized exercise plans for patients with heart conditions. (Currently in prototype phase)",
       image: "", 
       technologies: ["React", "Gemini API"],
       github: "https://github.com/sameep-git/ExRxAI",
