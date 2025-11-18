@@ -155,6 +155,15 @@ export default function Home() {
       featured: true
     },
     {
+      title: "Puckle - NHL Wordle",
+      description: "Developed a Wordle like game for NHL players using React and Supabase with more than 100 active users.",
+      image: "",
+      technologies: ["React", "Supabase", "TailwindCSS", "PostgreSQL", "Python"],
+      github: "https://github.com/sameep-git/puckle",
+      demo: "https://puckle.vercel.app",
+      featured: true
+    },
+    {
       title: "Virtual TA",
       description: "AI-powered teaching assistant with custom agentic framework that classifies student questions with 95% accuracy using RAG pipeline.",
       image: "", 
@@ -223,15 +232,6 @@ export default function Home() {
       image: "",
       technologies: ["Kotlin", "Android Studio"],
       github: "https://github.com/sameep-git/PaintApp",
-      demo: null,
-      featured: false
-    },
-    {
-      title: "Weather Android App",
-      description: "Developed an Android application using Kotlin that fetches real-time weather data from a public API and displays it with an intuitive user interface.",
-      image: "",
-      technologies: ["Kotlin", "Android Studio", "REST APIs"],
-      github: "https://github.com/sameep-git/Weather",
       demo: null,
       featured: false
     },

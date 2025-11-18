@@ -80,7 +80,7 @@ export default function ProjectsGrid({ projects }) {
             </div>
           </div>
 
-          {/* Click overlay */}
+          {/* Click overlay
           {(project.github || project.demo) && (
             <a
               href={project.github || project.demo}
@@ -89,7 +89,7 @@ export default function ProjectsGrid({ projects }) {
               className="absolute inset-0 z-0"
               aria-label={`View ${project.title}`}
             />
-          )}
+          )} */}
         </div>
       ))}
     </div>
