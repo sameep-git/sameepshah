@@ -2,6 +2,7 @@ import './globals.css';
 
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local'
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -20,7 +21,10 @@ export default function RootLayout({ children }) {
     <html lang="en"
       className={`${suse_mono.variable} ${inter.variable}`}
     >
-      <body className={`text-text bg-background`}>{children}</body>
+      <body className={`text-text bg-background`}>
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }
