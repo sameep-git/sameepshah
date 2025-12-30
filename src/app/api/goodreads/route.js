@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const GOODREADS_URL = "https://www.goodreads.com/review/list/196465196-sameep-shah?shelf=currently-reading";
-const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1h
 
 let cache = {
   data: null,
