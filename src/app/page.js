@@ -8,6 +8,7 @@ import SocialLinks from "@/components/SocialLinks";
 import ExperienceViewer from "@/components/ExperienceViewer";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import NowPlaying from "@/components/NowPlaying";
+import CurrentlyReading from "@/components/CurrentlyReading";
 
 export default function Home() {
   const roles = [
@@ -445,6 +446,10 @@ export default function Home() {
 
         <div className="w-full flex justify-center px-4 pb-12">
           <NowPlaying />
+        </div>
+
+        <div className="w-full flex justify-center px-4 pb-24">
+          <CurrentlyReading />
         </div>
       </section>
     </>
