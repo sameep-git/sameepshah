@@ -18,6 +18,8 @@ let nowPlayingCache = {
   fetchedAt: 0
 };
 
+let lastKnownTrack = null;
+
 function requireEnv(name) {
   const value = process.env[name];
   if (!value) {
@@ -87,7 +89,17 @@ export async function GET() {
     });
 
     if (nowPlayingResponse.status === 204 || nowPlayingResponse.status === 202) {
-      const body = { isPlaying: false };
+      const body = lastKnownTrack
+        ? {
+            isPlaying: false,
+            progressMs: 0,
+            durationMs: lastKnownTrack.durationMs ?? 0,
+            albumImage: lastKnownTrack.albumImage ?? null,
+            albumName: lastKnownTrack.albumName ?? null,
+            track: lastKnownTrack.track ?? null
+          }
+        : { isPlaying: false };
+
       nowPlayingCache = { data: body, fetchedAt: Date.now() };
       return NextResponse.json(body, {
         headers: {
@@ -98,15 +110,27 @@ export async function GET() {
 
     if (!nowPlayingResponse.ok) {
       const details = await nowPlayingResponse.text();
-      return NextResponse.json(
-        { error: "Unable to fetch currently playing track", details },
-        {
-          status: nowPlayingResponse.status,
-          headers: {
-            "Cache-Control": "no-store"
+      const body = lastKnownTrack
+        ? {
+            isPlaying: false,
+            progressMs: 0,
+            durationMs: lastKnownTrack.durationMs ?? 0,
+            albumImage: lastKnownTrack.albumImage ?? null,
+            albumName: lastKnownTrack.albumName ?? null,
+            track: lastKnownTrack.track ?? null,
+            error: "Unable to fetch currently playing track",
+            details
           }
+        : { error: "Unable to fetch currently playing track", details };
+
+      nowPlayingCache = { data: body, fetchedAt: Date.now() };
+
+      return NextResponse.json(body, {
+        status: nowPlayingResponse.status,
+        headers: {
+          "Cache-Control": "no-store"
         }
-      );
+      });
     }
 
     const payload = await nowPlayingResponse.json();
@@ -128,6 +152,15 @@ export async function GET() {
           }
         : null
     };
+
+    if (body.track) {
+      lastKnownTrack = {
+        track: body.track,
+        albumImage: body.albumImage,
+        albumName: body.albumName,
+        durationMs: body.durationMs
+      };
+    }
 
     nowPlayingCache = { data: body, fetchedAt: Date.now() };
 
