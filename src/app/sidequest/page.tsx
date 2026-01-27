@@ -7,7 +7,8 @@ import { Loader2, CheckCircle, Smartphone, ShoppingBasket, DollarSign, Users } f
 
 export default function SidequestLanding() {
     const [email, setEmail] = useState('');
-    const [fullName, setFullName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
 
@@ -15,13 +16,23 @@ export default function SidequestLanding() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!email) return;
+        const icloudRegex = /^[a-zA-Z0-9._%+-]+@(icloud\.com|me\.com|mac\.com)$/;
+        if (!icloudRegex.test(email)) {
+            setStatus('error');
+            setMessage('Please use an iCloud email address (@icloud.com, @me.com, or @mac.com).');
+            return;
+        }
 
         setStatus('loading');
         try {
             const { error } = await supabase
                 .from('waitlist')
-                .insert([{ email, full_name: fullName, source: 'sidequest_landing' }]);
+                .insert([{
+                    email,
+                    first_name: firstName,
+                    last_name: lastName,
+                    source: 'sidequest_landing'
+                }]);
 
             if (error) {
                 if (error.code === '23505') { // Unique violation
@@ -34,7 +45,8 @@ export default function SidequestLanding() {
                 setStatus('success');
                 setMessage("Welcome to the party! We'll be in touch soon.");
                 setEmail('');
-                setFullName('');
+                setFirstName('');
+                setLastName('');
             }
         } catch (err) {
             console.error(err);
@@ -76,13 +88,22 @@ export default function SidequestLanding() {
                         </p>
 
                         <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-sm mx-auto">
-                            <div>
+                            <div className="flex gap-4">
                                 <input
                                     type="text"
-                                    placeholder="Full Name"
-                                    value={fullName}
-                                    onChange={(e) => setFullName(e.target.value)}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
+                                    required
+                                    placeholder="First Name"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    className="w-1/2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
+                                />
+                                <input
+                                    type="text"
+                                    required
+                                    placeholder="Last Name"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    className="w-1/2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
                                 />
                             </div>
                             <div>
