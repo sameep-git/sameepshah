@@ -16,12 +16,7 @@ export default function SidequestLanding() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const icloudRegex = /^[a-zA-Z0-9._%+-]+@(icloud\.com|me\.com|mac\.com)$/;
-        if (!icloudRegex.test(email)) {
-            setStatus('error');
-            setMessage('Please use an iCloud email address (@icloud.com, @me.com, or @mac.com).');
-            return;
-        }
+        if (!email) return;
 
         setStatus('loading');
         try {
