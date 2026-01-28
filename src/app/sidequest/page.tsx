@@ -163,7 +163,7 @@ export default function SidequestLanding() {
                     <Link href="/sidequest/privacy" className="hover:text-[#00E39C] transition-colors">
                         Privacy Policy
                     </Link>
-                    <a href="mailto:sameepshah@gmail.com" className="hover:text-[#00E39C] transition-colors">
+                    <a href="mailto:sameepshah384@gmail.com" className="hover:text-[#00E39C] transition-colors">
                         Contact Support
                     </a>
                 </div>

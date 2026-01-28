@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
                         <p>
                             If you have any questions about this Privacy Policy, please contact us at:
                             <br />
-                            <a href="mailto:sameepshah@gmail.com" className="text-[#00E39C] hover:underline">sameepshah@gmail.com</a>
+                            <a href="mailto:sameepshah384@gmail.com" className="text-[#00E39C] hover:underline">sameepshah384@gmail.com</a>
                         </p>
                     </section>
                 </div>
