@@ -2,53 +2,40 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
 import { motion } from 'framer-motion';
-import { Loader2, CheckCircle, Smartphone, ShoppingBasket, DollarSign, Users } from 'lucide-react';
+import { CheckCircle, ShoppingBasket, DollarSign, Users, MessageSquare } from 'lucide-react';
 
 export default function SidequestLanding() {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [message, setMessage] = useState('');
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
 
     const themeColor = '#00E39C'; // Bright green from logo concept
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!email) return;
+        if (!name || !email || !message) return;
 
         setStatus('loading');
-        try {
-            const { error } = await supabase
-                .from('waitlist')
-                .insert([{
-                    email,
-                    first_name: firstName,
-                    last_name: lastName,
-                    source: 'sidequest_landing'
-                }]);
+        
+        // Construct mailto link
+        const subject = `Sidequest Support Request from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:sameepshah384@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            if (error) {
-                if (error.code === '23505') { // Unique violation
-                    setStatus('success'); // Treat duplicate as success implies already registered
-                    setMessage("You're already on the list!");
-                } else {
-                    throw error;
-                }
-            } else {
-                setStatus('success');
-                setMessage("Welcome to the party! We'll be in touch soon.");
-                setEmail('');
-                setFirstName('');
-                setLastName('');
-            }
-        } catch (err) {
-            console.error(err);
-            setStatus('error');
-            setMessage('Something went wrong. Please try again.');
-        }
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        setStatus('success');
+        
+        // Reset after a delay
+        setTimeout(() => {
+            setStatus('idle');
+            setName('');
+            setEmail('');
+            setMessage('');
+        }, 3000);
     };
 
     return (
@@ -78,28 +65,20 @@ export default function SidequestLanding() {
                     </p>
 
                     <div className="space-y-6 bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 shadow-2xl">
-                        <h2 className="text-xl font-semibold">Join the Beta</h2>
+                        <h2 className="text-xl font-semibold">Contact Support</h2>
                         <p className="text-gray-400 text-sm mb-4">
-                            Sign up to get notified when we launch.
+                            Have a question or feedback? We'd love to hear from you.
                         </p>
 
                         <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-sm mx-auto">
-                            <div className="flex gap-4">
+                            <div>
                                 <input
                                     type="text"
                                     required
-                                    placeholder="First Name"
-                                    value={firstName}
-                                    onChange={(e) => setFirstName(e.target.value)}
-                                    className="w-1/2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
-                                />
-                                <input
-                                    type="text"
-                                    required
-                                    placeholder="Last Name"
-                                    value={lastName}
-                                    onChange={(e) => setLastName(e.target.value)}
-                                    className="w-1/2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
+                                    placeholder="Your Name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
                                 />
                             </div>
                             <div>
@@ -112,27 +91,35 @@ export default function SidequestLanding() {
                                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500"
                                 />
                             </div>
+                            <div>
+                                <textarea
+                                    required
+                                    placeholder="How can we help?"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    rows={4}
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00E39C] focus:ring-1 focus:ring-[#00E39C] outline-none transition-all placeholder:text-gray-500 resize-none"
+                                />
+                            </div>
 
                             <button
                                 type="submit"
-                                disabled={status === 'loading' || status === 'success'}
+                                disabled={status === 'loading'}
                                 className="w-full py-3.5 rounded-xl bg-[#00E39C] text-black font-bold text-lg hover:bg-[#00c285] active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
-                                {status === 'loading' && <Loader2 className="w-5 h-5 animate-spin" />}
-                                {status === 'success' && <CheckCircle className="w-5 h-5" />}
-                                {status === 'idle' || status === 'error' ? 'Join Waitlist' : status === 'success' ? 'Joined!' : 'Joining...'}
+                                {status === 'success' ? (
+                                    <>
+                                        <CheckCircle className="w-5 h-5" />
+                                        <span>Opening Mail App...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <MessageSquare className="w-5 h-5" />
+                                        <span>Send Message</span>
+                                    </>
+                                )}
                             </button>
                         </form>
-
-                        {message && (
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                className={`text-sm ${status === 'error' ? 'text-red-400' : 'text-[#00E39C]'}`}
-                            >
-                                {message}
-                            </motion.p>
-                        )}
                     </div>
                 </motion.div>
             </main>
