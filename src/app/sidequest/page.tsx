@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { motion } from 'framer-motion';
 import { Loader2, CheckCircle, Smartphone, ShoppingBasket, DollarSign, Users } from 'lucide-react';
@@ -158,6 +159,14 @@ export default function SidequestLanding() {
             </section>
 
             <footer className="py-8 text-center text-gray-600 text-sm">
+                <div className="flex justify-center gap-6 mb-4">
+                    <Link href="/sidequest/privacy" className="hover:text-[#00E39C] transition-colors">
+                        Privacy Policy
+                    </Link>
+                    <a href="mailto:sameepshah@gmail.com" className="hover:text-[#00E39C] transition-colors">
+                        Contact Support
+                    </a>
+                </div>
                 <p>&copy; {new Date().getFullYear()} Sameep Shah. All rights reserved.</p>
             </footer>
         </div>
