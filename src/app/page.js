@@ -148,6 +148,15 @@ export default function Home() {
 
   const projects = [
     {
+      title: "Sidequest",
+      description: "The Ultimate Roommate Grocery App. Gamifies household chores, coordinates grocery runs, splits costs, and uses geofencing for bounties.",
+      image: "",
+      technologies: ["React Native", "Expo", "Supabase", "TypeScript", "Swift", "PostgreSQL", "TailwindCSS", "Zustand"],
+      github: "https://github.com/sameep-git/sidequest",
+      demo: null,
+      featured: true
+    },
+    {
       title: "MPC-Plus",
       description: "Working with CenterTX, developing a system for real time Machine Performance Check (MPC) data collection, analysis and visualization to reduce redundant QA tasks for radiation therapists.",
       image: "",
