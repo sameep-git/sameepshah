@@ -56,6 +56,19 @@ export default function Home() {
 
   const experiences = [
     {
+      role: "Software Engineer",
+      company: "The Center for Cancer & Blood Disorders",
+      location: "Fort Worth, TX",
+      period: "Aug 2025 - Present",
+      description: [
+        "Leading 6-member team building full-stack QA platform for medical linear accelerators across 4 sites, processing 150,000+ data points with sub-second query performance using React, ASP.NET Core, and PostgreSQL.",
+        "Architected hybrid backend with ASP.NET Core API and Python ETL pipeline, implementing real-time file monitoring to automatically process machine logs.",
+        "Deployed centralized PostgreSQL instance with OAuth 2.0 on shared network, enabling 20+ users across 4 facilities to access compliance data and generate reports, reducing report generation time by 93.3%."
+      ],
+      technologies: ["React", "ASP.NET Core", "PostgreSQL", "Python", "OAuth 2.0"],
+      links: []
+    },
+    {
       role: "Software Engineering Intern",
       company: "CBRE",
       location: "Richardson, TX",
@@ -123,7 +136,7 @@ export default function Home() {
     },
     {
       role: "Dining Services Chair",
-      company: "Sodexo",
+      company: "TCU Student Government",
       location: "Fort Worth, TX",
       period: "Aug 2025 - Present",
       description: [
@@ -177,7 +190,7 @@ export default function Home() {
     {
       title: "Virtual TA",
       description: "AI-powered teaching assistant with custom agentic framework that classifies student questions with 95% accuracy using RAG pipeline.",
-      image: "", 
+      image: "",
       technologies: ["Ollama",
         "FAISS",
         "HuggingFace",
@@ -204,7 +217,7 @@ export default function Home() {
     {
       title: "ExRx AI",
       description: "Working with UT Southwestern researchers, developing an AI powered exercise prescription generator for physical therapists to create personalized exercise plans for patients with heart conditions. (Currently in prototype phase)",
-      image: "", 
+      image: "",
       technologies: ["React", "Gemini API"],
       github: "https://github.com/sameep-git/ExRxAI",
       demo: "https://ex-rx-ai.vercel.app/",
@@ -247,14 +260,14 @@ export default function Home() {
       featured: false
     },
   ];
-  
+
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, [roles.length]);
 
@@ -263,7 +276,7 @@ export default function Home() {
       <Navbar />
       <SectionNavigator />
       <SocialLinks />
-      
+
       <main
         id="home"
         className="flex flex-col items-start justify-center h-screen px-8 md:px-16 lg:px-32 max-w-7xl mx-auto pt-20 md:pt-0"
@@ -276,7 +289,7 @@ export default function Home() {
         >
           Hi there, I am
         </motion.p>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -285,7 +298,7 @@ export default function Home() {
         >
           Sameep Shah.
         </motion.h1>
-        
+
         <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 flex items-center h-24">
           <motion.span
             initial={{ opacity: 0, y: 30 }}
@@ -308,7 +321,7 @@ export default function Home() {
             </motion.span>
           </AnimatePresence>
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -316,7 +329,7 @@ export default function Home() {
           className="max-w-2xl space-y-4 text-gray-400 text-lg"
         >
           <p>
-            I am a senior Computer Science & Economics double major at Texas Christian University (TCU) graduating in May 2026. 
+            I am a senior Computer Science & Economics double major at Texas Christian University (TCU) graduating in May 2026.
             I am looking for new grad opportunities in Software Engineering.
             I specialize in AI engineering with a focus on Agentic solutions, and I have a keen interest in distributed and low-level systems.
           </p>
@@ -324,7 +337,7 @@ export default function Home() {
             I enjoy sports (especially hockey), rock music and endurance running.
           </p>
         </motion.div>
-        
+
         <motion.a
           href="/Sameep%20Shah%20Resume.pdf"
           target="_blank"
@@ -351,12 +364,12 @@ export default function Home() {
             <span className="ml-6 h-px bg-accent flex-grow max-w-xs opacity-30"></span>
           </h2>
         </div>
-        
+
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column - Text */}
           <div className="space-y-4 text-gray-400 text-base md:text-lg">
-            
+
             <ul className="space-y-3 list-none">
               {aboutBullets.map((bullet, index) => (
                 <li key={index} className="flex items-start">
@@ -365,11 +378,11 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            
+
             <p className="pt-4">
               Here are some of my technical skills:
             </p>
-            
+
             <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm font-mono pt-2">
               {skills.map((skill, index) => (
                 <div key={index} className="flex items-center">
@@ -379,10 +392,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-          
+
           <ImageCarousel />
         </div>
-      </section>  
+      </section>
 
       {/* Experience Section */}
       <section
